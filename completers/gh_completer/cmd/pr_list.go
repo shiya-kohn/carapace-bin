@@ -38,7 +38,7 @@ func init() {
 	// TODO app completion
 	carapace.Gen(pr_listCmd).FlagCompletion(carapace.ActionMap{
 		"assignee": action.ActionAssignableUsers(pr_listCmd),
-		"author":   gh.ActionUsers(gh.HostOpts{}),
+		"author":   action.ActionAssignableUsers(pr_listCmd),
 		"base":     action.ActionBranches(pr_listCmd),
 		"head":     action.ActionBranches(pr_listCmd),
 		"json":     action.ActionPullRequestFields().UniqueList(","),
